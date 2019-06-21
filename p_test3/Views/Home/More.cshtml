@@ -1,0 +1,160 @@
+﻿@model List<p_test3.Models.Activity>
+@{
+    ViewBag.Title = "More";
+}
+
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <title>The Former Flat Responsive Agriculture bootstrap Website Template | Blog :: w3layouts</title>
+    <meta name="keywords" content="Bootstrap Responsive Templates, Iphone Compatible Templates, Smartphone Compatible Templates, Ipad Compatible Templates, Flat Responsive Templates" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+
+    </script>
+    <script src="~/js/jquery-1.11.0.min.js"></script>
+    <link href="~/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/css/style2.css" rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <!--start-header-->
+    <div id="home" class="header">
+        <div class="top-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" alt=""></a>
+                </div>
+                <!--start-top-nav-->
+                <nav class="top-nav">
+
+                </nav>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $('.popup-with-zoom-anim').magnificPopup({
+                    type: 'inline',
+                    fixedContentPos: false,
+                    fixedBgPos: true,
+                    overflowY: 'auto',
+                    closeBtnInside: true,
+                    preloader: false,
+                    midClick: true,
+                    removalDelay: 300,
+                    mainClass: 'my-mfp-zoom-in'
+                });
+
+            });
+        </script>
+        <!--End-header-->
+        <div class="navgation">
+            <div class="menu">
+                <a class="toggleMenu" href="#"><img src="images/menu-icon.png" alt="" /> </a>
+                <ul class="nav" id="nav">
+                    <li><a href="~/Home/IndexWithLogout">首頁</a></li>
+                    <li><a href="~/Home/Vip">會員專區 </a></li>
+                    <!--                    crtl+ / =註解 -->
+                    <!--                    <li><a href="404.html">Services</a></li>-->
+                    <li><a href="~/Home/More">農食共享活動</a></li>
+                  
+                </ul>
+                <!----start-top-nav-script---->
+                <script type="text/javascript" src="js/responsive-nav.js"></script>
+                <script type="text/javascript">
+                    jQuery(document).ready(function ($) {
+                        $(".scroll").click(function (event) {
+                            event.preventDefault();
+                            $('html,body').animate({
+                                scrollTop: $(this.hash).offset().top
+                            }, 1000);
+                        });
+                    });
+
+                </script>
+                <!----//End-top-nav-script---->
+            </div>
+
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <!--starts-blog-->
+    <div class="blog">
+        <div class="container">
+            <div class="blog-main">
+                <div class="col-md-8 blog-main-left">
+                    <h3>活動總攬</h3>
+
+                    <form action="/" method="post">
+                        @foreach (var item in Model)
+                        {
+
+                            <div class="blg">
+                                <div class="col-md-4 blog-left">
+                                    <a href="~/Home/Plus?id=@item.ActivityId"><img src="~/images/@item.ServerPath" alt=""></a>
+                                </div>
+                                <div class="col-md-8 blog-left">
+                                    <h5>@item.Title</h5>
+                                    <span>發起人:<span>@item.UserName</span><br />活動日期:@item.DateTime<br />活動地點:@item.Location</span>
+                                    
+                                    <br />
+                                    <p>目前報名人數 @item.Participation/@item.PersonLimitation</p>
+                                    <div class="blog-btn">
+                                        <a href="~/Home/Plus?id=@item.ActivityId">馬上報名</a>
+                                    </div>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+
+
+                        }
+                    </form>
+
+
+
+                </div>
+                <div class="col-md-4 blog-main-left">
+                    <h3>農民大小事</h3>
+                    <div class="ctgry">
+                        <ul>
+                            <li><a href="https://www.coa.gov.tw/theme_data.php?theme=news&sub_theme=agri&id=7755">全民食農 在地探索 食農教育推廣計畫受理提案</a></li>
+                            <li><a href="https://www.coa.gov.tw/theme_data.php?theme=news&sub_theme=agri&id=7754">政府協調台肥公司每包肥料降價20元！</a></li>
+                            <li><a href="https://www.coa.gov.tw/theme_data.php?theme=news&sub_theme=agri&id=7753">農委會&台糖&青農 串接土地新合作</a></li>
+                            <li><a href="https://www.coa.gov.tw/theme_data.php?theme=news&sub_theme=agri&id=7752">照顧蜂農權益 農委會研擬蜂農產業輔導措施</a></li>
+                            <li><a href="https://www.coa.gov.tw/theme_data.php?theme=news&sub_theme=agri&id=7749">調整農地重劃補助基準，提高農民參與重劃意願</a></li>
+                        </ul>
+                    </div>
+                    <div class="archives">
+                        <h3>2019農委會新聞</h3>
+                        <ul>
+                            <li><a href="https://www.coa.gov.tw/theme_list.php?theme=news&sub_theme=agri">五月</a></li>
+                            <li><a href="https://www.coa.gov.tw/theme_list.php?theme=news&sub_theme=agri">四月</a></li>
+                            <li><a href="https://www.coa.gov.tw/theme_list.php?theme=news&sub_theme=agri">三月</a></li>
+                            <li><a href="https://www.coa.gov.tw/theme_list.php?theme=news&sub_theme=agri">二月</a></li>
+                            <li><a href="https://www.coa.gov.tw/theme_list.php?theme=news&sub_theme=agri">一月</a></li>
+                           
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+        </div>
+    </div>
+    <!--end-blog-->
+    <div class="footer">
+        <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    </div>
+</body>
+</html>
